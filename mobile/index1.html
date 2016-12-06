@@ -1,0 +1,154 @@
+<!DOCTYPR html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../addons/fg_yxlm/template/mobile/public/css/index.css" />
+</head>
+<body>
+<?php echo 1111;exit;?>
+	<section class="ButtonArea">
+		<div class="choujiang"></div>
+		<div class="guize"></div>
+		<div class="jiangpin"></div>
+	</section>
+	<section class="mask">
+		<div class="guize-detail">
+			<p style="text-align:center;font-size:1rem">活动规则</br></br></p>
+			<p>1.活动时间：2016年15日-16日</br>
+			2.抽奖次数：每个微信号码一次</br>
+			3.奖品领取：实物奖品现场领取</br>
+			虚拟奖品凭兑换码和密码至相关网站自行兑换</br>
+			4.活动最终解释权归主办方所有</p>
+		</div>
+		<div class="jiangpin-detail">
+			<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p>
+			<ul>
+				<li>
+					<p>统一冰红茶500ML装一瓶</p>
+					<span class="huanling">未换领</span>
+				</li>
+			</ul>
+		</div>
+		<div class="queding">
+		</div>
+	</section>
+	<section class="zhuanpan">
+		<div class="begin"></div>
+	</section>
+	<section class="zhuanpan2">
+		<div class="begin2"></div>
+	</section>
+	<section class="qiangzhi">
+	</section>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script src="../addons/fg_yxlm/template/mobile/public/js/jQueryRotate.2.2.js"></script>
+	<script src="../addons/fg_yxlm/template/mobile/public/js/jquery.easing.min.js"></script>
+	<script>
+		$(function(){
+			//点击‘游戏规则’
+			$(".guize").click(function(){
+				$(".ButtonArea").fadeOut();
+				$(".mask").fadeIn();
+				$(".jiangpin-detail").hide()
+				$(".guize-detail").show();
+				$(".queding").click(function(){
+					$(".mask").fadeOut();
+					$(".ButtonArea").fadeIn()
+				})
+			})
+
+			//点击‘我的奖品’
+			$(".jiangpin").click(function(){
+				$(".ButtonArea").fadeOut();
+				$(".mask").fadeIn();
+				$(".jiangpin-detail").show()
+				$(".guize-detail").hide();
+				$(".queding").click(function(){
+					$(".mask").fadeOut();
+					$(".ButtonArea").fadeIn()
+				})
+			})
+
+			//点击‘点击抽奖‘
+			$(".zhuanpan").height($(this).width()*0.7);
+			$(".zhuanpan2").height($(this).width()*0.7);
+			$(".choujiang").click(function(){
+				$(".ButtonArea").fadeOut();
+				$('.zhuanpan').fadeIn()
+				$('.begin').fadeIn()
+			})
+		})
+	</script>
+	<script>
+//点击开始
+$(".begin").click(function(){
+	$(".zhuanpan2").show();
+	$(".begin").hide();
+	var timeOut = function(){  //超时函数
+		$(".zhuanpan").rotate({
+			angle:0, 
+			duration: 10000, 
+			animateTo: 2160, //这里是设置请求超时后返回的角度，所以应该还是回到最原始的位置，2160是因为我要让它转6圈，就是360*6得来的
+			callback:function(){
+				alert('网络超时')
+			}
+		}); 
+	}; 
+	var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+		$('.zhuanpan').stopRotate();
+		$(".zhuanpan").rotate({
+			angle:0, 
+			duration: 5000, 
+			animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+			callback:function(){
+				$(".qiangzhi").fadeIn()
+				alert(text)
+			}
+		}); 
+	};
+	
+	$(".zhuanpan").rotate({ 
+	   bind: 
+		 { 
+			click: function(){
+				/*var time = [0,1];
+					time = time[Math.floor(Math.random()*time.length)];
+				if(time==0){
+					timeOut(); //网络超时
+				}*/
+				var time = 1;
+				if(time==1){
+					var data = [1,2,3,0]; //返回的数组
+						data = data[Math.floor(Math.random()*data.length)];
+					if(data==1){
+						var angle = [36,216];
+							angle = angle[Math.floor(Math.random()*angle.length)]
+						rotateFunc(1,angle,'恭喜您抽中的一等奖')
+					}
+					if(data==2){
+						var angle = [72,252];
+							angle = angle[Math.floor(Math.random()*angle.length)]
+						rotateFunc(2,angle,'恭喜您抽中的二等奖')
+					}
+					if(data==3){
+						var angle = [108,180,288,360];
+							angle = angle[Math.floor(Math.random()*angle.length)]
+						rotateFunc(3,angle,'恭喜您抽中的三等奖')
+					}
+					if(data==0){
+						var angle = [144,324];
+							angle = angle[Math.floor(Math.random()*angle.length)]
+						rotateFunc(0,angle,'很遗憾，这次您未抽中奖')
+					}
+				}
+			}
+		 } 
+	   
+	});
+	
+})
+
+	</script>
+</body>
+</html>

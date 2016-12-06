@@ -1,0 +1,73 @@
+stocket 地址:
+ws://211.149.187.81:9501
+
+ajax 地址:
+http://211.149.187.81:9501
+
+所有接口统一标准:
+格式, JSON: 
+收到数据: {"status":"true/false","msg":"","data":""}
+提交数据: {"type":"","data":""}
+
+一 评论scoket页面:
+
+接口1
+---------
+打开socket 时,发送数据:
+{"type":"screent_comment","data":""}
+
+收到数据格式:
+{
+    "status":"true/false",
+    "msg":"",
+    "data":{
+        "total":{
+            "people":"250",
+            "comment":"250220",
+        },
+        "comment":{
+            "icon":"http://ww.com/ttt.jpg",
+            "code":"PW045412",
+            "time":"20:35",
+            "content":"伤B.."
+        } //comment可能会为空, 为空时,只推送人数信息
+    }
+}
+
+接口2
+----------------
+评论抽奖ajax:
+请求地址: http://211.149.187.81:9501
+请求方式: post/get
+请求数据: {"type":"screent_comment_lottery","data":""}
+返回数据: 
+{
+    "status":"true",
+    "msg":"",
+    "data":"PW544545"  //中奖编码
+}
+
+
+二 抽奖页面
+
+接口3
+---------
+打开socket 时,发送数据:
+{"type":"screent_lottery","data":""}
+
+收到数据格式:
+{
+    "status":"true/false",
+    "msg":"",
+    "data":{
+        "user_info":{
+            "icon":"http://ww.com/ttt.jpg",
+            "code":"PW045412",
+            "time":"20:35"
+        },
+        "prize":{
+            "pid":"1",  //转盘ID
+            "name":"笔记本电脑"  //奖品名字, name为空时,表示没有中奖
+        } // prize 可能为空. 为这表示某人开始抽奖
+    }
+}

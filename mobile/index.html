@@ -1,0 +1,820 @@
+﻿<!DOCTYPR html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no" />
+	<style>
+	*{margin:0;padding:0;}
+html,body{
+	width:100%;
+	height:100%;
+	background: url(http://oelw8c79u.bkt.clouddn.com/bg.jpg);
+	background-size: 100% 100%;
+}
+
+.ButtonArea{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.choujiang{
+	width: 54%;
+    height: 14%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/logoC.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 23%;
+    bottom: 28%;
+	z-index:200
+}
+
+.ButtonArea .guize{
+	width: 35%;
+    height: 6%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/logoG.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 10%;
+    bottom: 5%;
+}
+
+.ButtonArea .jiangpin{
+	width: 35%;
+    height: 6%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/logoJ.png);
+    background-size: 100% 100%;
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+}
+
+.mask{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none;
+	z-index:300
+}
+
+.mask2{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none;
+	z-index:300
+}
+
+.mask2 .guize-detail{
+	width:70%;
+	position: absolute;
+	top:10%;
+	left:15%;
+	text-align: left;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	display: none
+}
+
+.mask .guize-detail{
+	width:70%;
+	position: absolute;
+	top:10%;
+	left:15%;
+	text-align: left;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	display: none
+}
+
+.queding{
+	width: 36%;
+    height: 10%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/close.png);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 32%;
+}
+
+.mask .jiangpin-detail{
+	width:80%;
+	position: absolute;
+	top:10%;
+	left:10%;
+	text-align: left;
+	font-size: 1rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	display: none;
+	height:70%;
+	overflow: scroll;
+}
+
+.jiangpin-detail li{
+	width:100%;
+	margin-bottom: 1rem;
+	list-style: none
+}
+
+.jiangpin-detail p{
+	width:70%;
+	display: inline-block;
+}
+
+.jiangpin-detail .huanling{
+	display: inline-block;
+	height:1.2rem;
+	border-radius: 5px;
+	border:1px solid #fff;
+	text-align: center;
+	line-height: 1.2rem;
+	font-size: 0.8rem;
+	width:5rem;
+	float: right;
+	background: rgba(134,220,255);
+}
+
+.active{display: block}
+
+.zhuanpan{
+	width:70%;
+	background: url(http://oelw8c79u.bkt.clouddn.com/roll2.png);
+	background-size:100% 100%;
+	position: absolute;
+	left:15%;
+	top:50%;
+	display: none
+}
+
+.zhuanpan-container{
+	width:70%;
+	position: absolute;
+	left:15%;
+	top:50%;
+	display: none
+}
+
+.begin{
+	position: absolute;
+    width: 34%;
+    height: 44%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/begin.png);
+    background-size: 100% 100%;
+    left: 33%;
+    top: 24%;
+}
+
+.zhuanpan2{
+	width:70%;
+	background-size:100% 100%;
+	position: absolute;
+	left:15%;
+	top:50%;
+	display: none
+}
+
+.begin2{
+	position: absolute;
+    width: 34%;
+    height: 44%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/begin.png);
+    background-size: 100% 100%;
+    left: 33%;
+    top: 24%;
+}
+
+.qiangzhi{
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	background: url(http://oelw8c79u.bkt.clouddn.com/qiangzhi.png);
+	background-size: 100% 100%;
+	z-index: 200;
+	display: none
+}
+
+.type5{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none
+}
+
+.type4{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none
+}
+
+.type3{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none
+}
+
+.type2{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none
+}
+
+.type1{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none
+}
+
+.yes{
+	width: 36%;
+    height: 10%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/yes.png);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    right:10%;
+}
+
+.no{
+	width: 36%;
+    height: 10%;
+    background: url(http://oelw8c79u.bkt.clouddn.com/no.png);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    left:10%;
+}
+
+.erweima{
+	width:100%;
+	height:100%;
+	background: url(http://oelw8c79u.bkt.clouddn.com/bg.jpg);
+	background-size: 100% 100%;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:200;
+	display:none
+}
+	</style>
+</head>
+<body>
+{template 'jssdk'}
+	
+	<script>
+	require(['jquery'],function($){
+//rotate
+// VERSION: 2.2 LAST UPDATE: 13.03.2012
+/* 
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Made by Wilq32, wilq32@gmail.com, Wroclaw, Poland, 01.2009
+ * Website: http://code.google.com/p/jqueryrotate/ 
+ */
+
+// Documentation removed from script file (was kinda useless and outdated)
+
+(function($) {
+var supportedCSS,styles=document.getElementsByTagName("head")[0].style,toCheck="transformProperty WebkitTransform OTransform msTransform MozTransform".split(" ");
+for (var a=0;a<toCheck.length;a++) if (styles[toCheck[a]] !== undefined) supportedCSS = toCheck[a];
+// Bad eval to preven google closure to remove it from code o_O
+// After compresion replace it back to var IE = 'v' == '\v'
+var IE = eval('"v"=="\v"');
+
+jQuery.fn.extend({
+    rotate:function(parameters)
+    {
+        if (this.length===0||typeof parameters=="undefined") return;
+            if (typeof parameters=="number") parameters={angle:parameters};
+        var returned=[];
+        for (var i=0,i0=this.length;i<i0;i++)
+            {
+                var element=this.get(i);	
+                if (!element.Wilq32 || !element.Wilq32.PhotoEffect) {
+
+                    var paramClone = $.extend(true, {}, parameters); 
+                    var newRotObject = new Wilq32.PhotoEffect(element,paramClone)._rootObj;
+
+                    returned.push($(newRotObject));
+                }
+                else {
+                    element.Wilq32.PhotoEffect._handleRotation(parameters);
+                }
+            }
+            return returned;
+    },
+    getRotateAngle: function(){
+        var ret = [];
+        for (var i=0,i0=this.length;i<i0;i++)
+            {
+                var element=this.get(i);	
+                if (element.Wilq32 && element.Wilq32.PhotoEffect) {
+                    ret[i] = element.Wilq32.PhotoEffect._angle;
+                }
+            }
+            return ret;
+    },
+    stopRotate: function(){
+        for (var i=0,i0=this.length;i<i0;i++)
+            {
+                var element=this.get(i);	
+                if (element.Wilq32 && element.Wilq32.PhotoEffect) {
+                    clearTimeout(element.Wilq32.PhotoEffect._timer);
+                }
+            }
+    }
+});
+
+// Library agnostic interface
+
+Wilq32=window.Wilq32||{};
+Wilq32.PhotoEffect=(function(){
+
+	if (supportedCSS) {
+		return function(img,parameters){
+			img.Wilq32 = {
+				PhotoEffect: this
+			};
+            
+            this._img = this._rootObj = this._eventObj = img;
+            this._handleRotation(parameters);
+		}
+	} else {
+		return function(img,parameters) {
+			// Make sure that class and id are also copied - just in case you would like to refeer to an newly created object
+            this._img = img;
+
+			this._rootObj=document.createElement('span');
+			this._rootObj.style.display="inline-block";
+			this._rootObj.Wilq32 = 
+				{
+					PhotoEffect: this
+				};
+			img.parentNode.insertBefore(this._rootObj,img);
+			
+			if (img.complete) {
+				this._Loader(parameters);
+			} else {
+				var self=this;
+				// TODO: Remove jQuery dependency
+				jQuery(this._img).bind("load", function()
+				{
+					self._Loader(parameters);
+				});
+			}
+		}
+	}
+})();
+
+Wilq32.PhotoEffect.prototype={
+    _setupParameters : function (parameters){
+		this._parameters = this._parameters || {};
+        if (typeof this._angle !== "number") this._angle = 0 ;
+        if (typeof parameters.angle==="number") this._angle = parameters.angle;
+        this._parameters.animateTo = (typeof parameters.animateTo==="number") ? (parameters.animateTo) : (this._angle); 
+
+        this._parameters.step = parameters.step || this._parameters.step || null;
+		this._parameters.easing = parameters.easing || this._parameters.easing || function (x, t, b, c, d) { return -c * ((t=t/d-1)*t*t*t - 1) + b; }
+		this._parameters.duration = parameters.duration || this._parameters.duration || 1000;
+        this._parameters.callback = parameters.callback || this._parameters.callback || function(){};
+        if (parameters.bind && parameters.bind != this._parameters.bind) this._BindEvents(parameters.bind); 
+	},
+	_handleRotation : function(parameters){
+          this._setupParameters(parameters);
+          if (this._angle==this._parameters.animateTo) {
+              this._rotate(this._angle);
+          }
+          else { 
+              this._animateStart();          
+          }
+	},
+
+	_BindEvents:function(events){
+		if (events && this._eventObj) 
+		{
+            // Unbinding previous Events
+            if (this._parameters.bind){
+                var oldEvents = this._parameters.bind;
+                for (var a in oldEvents) if (oldEvents.hasOwnProperty(a)) 
+                        // TODO: Remove jQuery dependency
+                        jQuery(this._eventObj).unbind(a,oldEvents[a]);
+            }
+
+            this._parameters.bind = events;
+			for (var a in events) if (events.hasOwnProperty(a)) 
+				// TODO: Remove jQuery dependency
+					jQuery(this._eventObj).bind(a,events[a]);
+		}
+	},
+
+	_Loader:(function()
+	{
+		if (IE)
+		return function(parameters)
+		{
+			var width=this._img.width;
+			var height=this._img.height;
+			this._img.parentNode.removeChild(this._img);
+							
+			this._vimage = this.createVMLNode('image');
+			this._vimage.src=this._img.src;
+			this._vimage.style.height=height+"px";
+			this._vimage.style.width=width+"px";
+			this._vimage.style.position="absolute"; // FIXES IE PROBLEM - its only rendered if its on absolute position!
+			this._vimage.style.top = "0px";
+			this._vimage.style.left = "0px";
+
+			/* Group minifying a small 1px precision problem when rotating object */
+			this._container =  this.createVMLNode('group');
+			this._container.style.width=width;
+			this._container.style.height=height;
+			this._container.style.position="absolute";
+			this._container.setAttribute('coordsize',width-1+','+(height-1)); // This -1, -1 trying to fix ugly problem with small displacement on IE
+			this._container.appendChild(this._vimage);
+			
+			this._rootObj.appendChild(this._container);
+			this._rootObj.style.position="relative"; // FIXES IE PROBLEM
+			this._rootObj.style.width=width+"px";
+			this._rootObj.style.height=height+"px";
+			this._rootObj.setAttribute('id',this._img.getAttribute('id'));
+			this._rootObj.className=this._img.className;			
+		    this._eventObj = this._rootObj;	
+		    this._handleRotation(parameters);	
+		}
+		else
+		return function (parameters)
+		{
+			this._rootObj.setAttribute('id',this._img.getAttribute('id'));
+			this._rootObj.className=this._img.className;
+			
+			this._width=this._img.width;
+			this._height=this._img.height;
+			this._widthHalf=this._width/2; // used for optimisation
+			this._heightHalf=this._height/2;// used for optimisation
+			
+			var _widthMax=Math.sqrt((this._height)*(this._height) + (this._width) * (this._width));
+
+			this._widthAdd = _widthMax - this._width;
+			this._heightAdd = _widthMax - this._height;	// widthMax because maxWidth=maxHeight
+			this._widthAddHalf=this._widthAdd/2; // used for optimisation
+			this._heightAddHalf=this._heightAdd/2;// used for optimisation
+			
+			this._img.parentNode.removeChild(this._img);	
+			
+			this._aspectW = ((parseInt(this._img.style.width,10)) || this._width)/this._img.width;
+			this._aspectH = ((parseInt(this._img.style.height,10)) || this._height)/this._img.height;
+			
+			this._canvas=document.createElement('canvas');
+			this._canvas.setAttribute('width',this._width);
+			this._canvas.style.position="relative";
+			this._canvas.style.left = -this._widthAddHalf + "px";
+			this._canvas.style.top = -this._heightAddHalf + "px";
+			this._canvas.Wilq32 = this._rootObj.Wilq32;
+			
+			this._rootObj.appendChild(this._canvas);
+			this._rootObj.style.width=this._width+"px";
+			this._rootObj.style.height=this._height+"px";
+            this._eventObj = this._canvas;
+			
+			this._cnv=this._canvas.getContext('2d');
+            this._handleRotation(parameters);
+		}
+	})(),
+
+	_animateStart:function()
+	{	
+		if (this._timer) {
+			clearTimeout(this._timer);
+		}
+		this._animateStartTime = +new Date;
+		this._animateStartAngle = this._angle;
+		this._animate();
+	},
+    _animate:function()
+    {
+         var actualTime = +new Date;
+         var checkEnd = actualTime - this._animateStartTime > this._parameters.duration;
+
+         // TODO: Bug for animatedGif for static rotation ? (to test)
+         if (checkEnd && !this._parameters.animatedGif) 
+         {
+             clearTimeout(this._timer);
+         }
+         else 
+         {
+             if (this._canvas||this._vimage||this._img) {
+                 var angle = this._parameters.easing(0, actualTime - this._animateStartTime, this._animateStartAngle, this._parameters.animateTo - this._animateStartAngle, this._parameters.duration);
+                 this._rotate((~~(angle*10))/10);
+             }
+             if (this._parameters.step) {
+                this._parameters.step(this._angle);
+             }
+             var self = this;
+             this._timer = setTimeout(function()
+                     {
+                     self._animate.call(self);
+                     }, 10);
+         }
+
+         // To fix Bug that prevents using recursive function in callback I moved this function to back
+         if (this._parameters.callback && checkEnd){
+             this._angle = this._parameters.animateTo;
+             this._rotate(this._angle);
+             this._parameters.callback.call(this._rootObj);
+         }
+     },
+
+	_rotate : (function()
+	{
+		var rad = Math.PI/180;
+		if (IE)
+		return function(angle)
+		{
+            this._angle = angle;
+			this._container.style.rotation=(angle%360)+"deg";
+		}
+		else if (supportedCSS)
+		return function(angle){
+            this._angle = angle;
+			this._img.style[supportedCSS]="rotate("+(angle%360)+"deg)";
+		}
+		else 
+		return function(angle)
+		{
+            this._angle = angle;
+			angle=(angle%360)* rad;
+			// clear canvas	
+			this._canvas.width = this._width+this._widthAdd;
+			this._canvas.height = this._height+this._heightAdd;
+						
+			// REMEMBER: all drawings are read from backwards.. so first function is translate, then rotate, then translate, translate..
+			this._cnv.translate(this._widthAddHalf,this._heightAddHalf);	// at least center image on screen
+			this._cnv.translate(this._widthHalf,this._heightHalf);			// we move image back to its orginal 
+			this._cnv.rotate(angle);										// rotate image
+			this._cnv.translate(-this._widthHalf,-this._heightHalf);		// move image to its center, so we can rotate around its center
+			this._cnv.scale(this._aspectW,this._aspectH); // SCALE - if needed ;)
+			this._cnv.drawImage(this._img, 0, 0);							// First - we draw image
+		}
+
+	})()
+}
+
+if (IE)
+{
+Wilq32.PhotoEffect.prototype.createVMLNode=(function(){
+document.createStyleSheet().addRule(".rvml", "behavior:url(#default#VML)");
+		try {
+			!document.namespaces.rvml && document.namespaces.add("rvml", "urn:schemas-microsoft-com:vml");
+			return function (tagName) {
+				return document.createElement('<rvml:' + tagName + ' class="rvml">');
+			};
+		} catch (e) {
+			return function (tagName) {
+				return document.createElement('<' + tagName + ' xmlns="urn:schemas-microsoft.com:vml" class="rvml">');
+			};
+		}		
+})();
+}
+
+})(jQuery);
+//rotate插件代码结束
+
+		$(function(){
+			//rotate
+			var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+					$('.zhuanpan').stopRotate();
+					$(".zhuanpan").rotate({
+						angle:0, 
+						duration: 5000, 
+						animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+						callback:function(){
+							if(type == 1){
+										$(".zhuanpan").hide();
+										$(".zhuanpan2").hide();
+										$(".type1").show();
+										$(".type1 .queding").click(function(){
+											$('.type1').fadeOut();
+											$(".ButtonArea").show();
+											$(".choujiang").hide();
+											$(".mask").html($('.type1').html())
+										})
+							}else{
+								$(".qiangzhi").fadeIn()
+							}
+							//alert(text)
+						}
+					}); 
+			};
+			
+			//点击开始
+			$(".begin").click(function(){
+				$(".zhuanpan2").show();
+				$(".begin").hide();
+				var timeOut = function(){  //超时函数
+					$(".zhuanpan").rotate({
+						angle:0, 
+						duration: 10000, 
+						animateTo: 2160, //这里是设置请求超时后返回的角度，所以应该还是回到最原始的位置，2160是因为我要让它转6圈，就是360*6得来的
+						callback:function(){
+							alert('网络超时')
+						}
+					}); 
+				}; 
+				
+				$(".zhuanpan").rotate({ 
+				   bind: 
+					 { 
+						click: function(){
+							/*var time = [0,1];
+								time = time[Math.floor(Math.random()*time.length)];
+							if(time==0){
+								timeOut(); //网络超时
+							}*/
+							var time = 1;
+							if(time==1){
+								
+								var data = type; //返回的数组
+								if(data==5){
+									var angle = [36,216];
+										angle = angle[Math.floor(Math.random()*angle.length)]
+									rotateFunc(1,angle,'恭喜您抽中的一等奖')
+								}
+								if(data==4){
+									var angle = [72,252];
+										angle = angle[Math.floor(Math.random()*angle.length)]
+									rotateFunc(2,angle,'恭喜您抽中的二等奖')
+								}
+								if(data==3){
+									var angle = [180,360];
+										angle = angle[Math.floor(Math.random()*angle.length)]
+									rotateFunc(3,angle,'恭喜您抽中的三等奖')
+								}
+								if(data==2){
+									var angle = [108,288];
+										angle = angle[Math.floor(Math.random()*angle.length)]
+									rotateFunc(3,angle,'恭喜您抽中的三等奖')
+								}
+								if(data==1){
+									var angle = [144,324];
+										angle = angle[Math.floor(Math.random()*angle.length)]
+									rotateFunc(0,angle,'很遗憾，这次您未抽中奖')
+								}
+							}
+						}
+					 } 
+				   
+				});
+		
+			})
+			//点击‘游戏规则’
+			
+			$(".guize").click(function(){
+				$(".ButtonArea").fadeOut();
+				$(".mask2").fadeIn();
+				$(".jiangpin-detail").hide()
+				$(".guize-detail").show();
+				$(".queding").click(function(){
+					$(".mask2").fadeOut();
+					$(".ButtonArea").fadeIn()
+				})
+			})
+
+			//点击‘我的奖品’
+			$(".jiangpin").click(function(){
+				$(".ButtonArea").fadeOut();
+				$(".mask").fadeIn();
+				$(".jiangpin-detail").show()
+				$(".guize-detail").hide();
+				$(".queding").click(function(){
+					$(".mask").fadeOut();
+					$(".ButtonArea").fadeIn()
+				})
+			})
+
+			//点击‘点击抽奖‘
+			$(".zhuanpan").height($(this).width()*0.7);
+			$(".zhuanpan2").height($(this).width()*0.7);
+			$(".choujiang").click(function(){
+				$(".ButtonArea").fadeOut();
+				$(".choujiang").fadeOut()
+				$('.zhuanpan').fadeIn()
+				$('.begin').fadeIn()
+			})
+
+		})	
+	})
+	</script>
+	<!--以下为html-->
+	<div class="choujiang"></div>
+	<section class="ButtonArea">
+		<div class="guize"></div>
+		<div class="jiangpin"></div>
+	</section>
+	<section class="mask">
+		<div class="guize-detail">
+			<p style="text-align:center;font-size:1rem">活动规则</br></br></p>
+			<p>1.活动时间：2016年15日-16日</br>
+			2.抽奖次数：每个微信号码一次</br>
+			3.奖品领取：实物奖品现场领取</br>
+			虚拟奖品凭兑换码和密码至相关网站自行兑换</br>
+			4.由于虚拟奖品数量有限，中奖后请立即兑换</br>
+			5.活动最终解释权归主办方所有</p>
+		</div>
+		<div class="jiangpin-detail">
+			
+		</div>
+		<div class="queding">
+		</div>
+	</section>
+	<section class="mask2">
+		<div class="guize-detail">
+			<p style="text-align:center;font-size:1rem">活动规则</br></br></p>
+			<p>1.活动时间：2016年15日-16日</br>
+			2.抽奖次数：每个微信号码一次</br>
+			3.奖品领取：实物奖品现场领取</br>
+			虚拟奖品凭兑换码和密码至相关网站自行兑换</br>
+			4.由于虚拟奖品数量有限，中奖后请立即兑换</br>
+			5.活动最终解释权归主办方所有</p>
+		</div>
+		<div class="queding">
+		</div>
+	</section>
+	<section class="zhuanpan">
+		<div class="begin"></div>
+	</section>
+	<section class="zhuanpan2">
+		<div class="begin2"></div>
+	</section>
+	<section class="qiangzhi">
+	</section>
+	<section class="type5">
+		<p style="font-size:1.8rem;font-weight:bold;text-align:center;margin-top:1.5rem">恭喜您中奖</p>
+		<p style="font-size:2.2rem;font-weight:bold;text-align:center;margin-top:0.8rem">"英雄联盟1000点券"</p>
+		<p style="font-size:0.8rem;font-weight:bold;text-align:center;margin-top:0.6rem">凭此QQ卡和密码至英雄联盟官网兑换</p>
+		<p style="font-size:1.2rem;font-weight:bold;text-align:center;margin-top:0.6rem">兑换码:{$userinfo['zhanghao']}</p>
+		<p style="font-size:1.2rem;font-weight:bold;text-align:center;margin-top:0rem">兑换密码:{$userinfo['mima']}</p>
+		<div class="queding"></div>
+	</section>
+	<section class="type4">
+		<p style="font-size:1.8rem;font-weight:bold;text-align:center;margin-top:1.5rem">恭喜您中奖</p>
+		<p style="font-size:2.2rem;font-weight:bold;text-align:center;margin-top:0.8rem">"斗鱼鱼丸一份"</p>
+		<p style="font-size:0.8rem;font-weight:bold;text-align:center;margin-top:0.6rem">凭此兑换码和密码至斗鱼官网兑换中心兑换</p>
+		<p style="font-size:1.2rem;font-weight:bold;text-align:center;margin-top:0.6rem">兑换码:{$userinfo['duihuanma']}</p>
+		<p style="font-size:1.2rem;font-weight:bold;text-align:center;margin-top:0rem">兑换密码:{$userinfo['duihuanmima']}</p>
+		<div class="queding"></div>
+	</section>
+	<section class="type3">
+		<p style="font-size:1.8rem;font-weight:bold;text-align:center;margin-top:1.5rem">恭喜您中奖</p>
+		<p style="font-size:2.2rem;font-weight:bold;text-align:center;margin-top:0.8rem">"冰红茶1L装一瓶"</p>
+		<p style="font-size:0.8rem;font-weight:bold;text-align:center;margin-top:0.6rem">请在现场直接领取奖品</p>
+		<p style="font-size:1.2rem;font-weight:bold;text-align:center;margin-top:0rem">领取后点击“我已领取”</p>
+		
+		<div class="yes"></div>
+		<div class="no"></div>
+	</section>
+	<section class="type2">
+		<p style="font-size:1.8rem;font-weight:bold;text-align:center;margin-top:1.5rem">恭喜您中奖</p>
+		<p style="font-size:2.2rem;font-weight:bold;text-align:center;margin-top:0.8rem">"冰红茶500mL装一瓶"</p>
+		<p style="font-size:0.8rem;font-weight:bold;text-align:center;margin-top:0.6rem">请在现场直接领取奖品</p>
+		<p style="font-size:1.2rem;font-weight:bold;text-align:center;margin-top:0rem">领取后点击“我已领取”</p>
+		
+		<div class="yes"></div>
+		<div class="no"></div>
+	</section>
+	<section class="type1">
+		<p style="font-size:1.8rem;font-weight:bold;text-align:center;margin-top:1.5rem">谢谢参与</p>
+		<div class="queding"></div>
+	</section>
+	<section class="erweima">
+		<div style="width:60%;position:absolute;left:20%;top:45%">
+			<img src="http://oelw8c79u.bkt.clouddn.com/erweima.jpg" width="100%">
+		</div>
+		<p style='text-align:center;position:absolute;bottom:10%;font-weight:bold;width:100%'>长按二维码，关注公众号参加抽奖</p>
+	</section>
+</body>
+</html>

@@ -1,0 +1,177 @@
+*{margin:0;padding:0;}
+html,body{
+	width:100%;
+	height:100%;
+	background: url(../img/bg.jpg);
+	background-size: 100% 100%;
+}
+
+.ButtonArea{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.ButtonArea .choujiang{
+	width: 54%;
+    height: 14%;
+    background: url(../img/logoC.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 23%;
+    bottom: 28%;
+}
+
+.ButtonArea .guize{
+	width: 35%;
+    height: 6%;
+    background: url(../img/logoG.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 10%;
+    bottom: 5%;
+}
+
+.ButtonArea .jiangpin{
+	width: 35%;
+    height: 6%;
+    background: url(../img/logoJ.png);
+    background-size: 100% 100%;
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+}
+
+.mask{
+	width:100%;
+	height:50%;
+	background: rgba(134,220,255,.73);
+	position: absolute;
+	top:44%;
+	display: none
+}
+
+.mask .guize-detail{
+	width:70%;
+	position: absolute;
+	top:10%;
+	left:15%;
+	text-align: left;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	display: none
+}
+
+.mask .queding{
+	width: 36%;
+    height: 10%;
+    background: url(../img/close.png);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 32%;
+}
+
+.mask .jiangpin-detail{
+	width:80%;
+	position: absolute;
+	top:10%;
+	left:10%;
+	text-align: left;
+	font-size: 1rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	display: none;
+	height:70%;
+	overflow: scroll;
+}
+
+.jiangpin-detail li{
+	width:100%;
+	margin-bottom: 1rem;
+	list-style: none
+}
+
+.jiangpin-detail p{
+	width:70%;
+	display: inline-block;
+}
+
+.jiangpin-detail .huanling{
+	display: inline-block;
+	height:1.2rem;
+	border-radius: 5px;
+	border:1px solid #fff;
+	text-align: center;
+	line-height: 1.2rem;
+	font-size: 0.8rem;
+	width:5rem;
+	float: right;
+	background: rgba(134,220,255);
+}
+
+.active{display: block}
+
+.zhuanpan{
+	width:70%;
+	background: url(../img/zhuanpan.png);
+	background-size:100% 100%;
+	position: absolute;
+	left:15%;
+	top:50%;
+	display: none
+}
+
+.zhuanpan-container{
+	width:70%;
+	position: absolute;
+	left:15%;
+	top:50%;
+	display: none
+}
+
+.begin{
+	position: absolute;
+    width: 34%;
+    height: 44%;
+    background: url(../img/begin.png);
+    background-size: 100% 100%;
+    left: 33%;
+    top: 24%;
+}
+
+.zhuanpan2{
+	width:70%;
+	background-size:100% 100%;
+	position: absolute;
+	left:15%;
+	top:50%;
+	display: none
+}
+
+.begin2{
+	position: absolute;
+    width: 34%;
+    height: 44%;
+    background: url(../img/begin.png);
+    background-size: 100% 100%;
+    left: 33%;
+    top: 24%;
+}
+
+.qiangzhi{
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	background: url(../img/qiangzhi.png);
+	background-size: 100% 100%;
+	z-index: 200;
+	display: none
+}
+
+

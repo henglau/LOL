@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html2</title>
+	<link rel="stylesheet" href="css/lol.css">
+</head>
+<body style="background:url(images/bg2.jpg) no-repeat center;">
+	<div id="div4">
+		<ul>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错,这个家伙真的是太厉害了哟......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span><i>(20:18)</i>这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+			<li>
+				<p>
+					<img src="images/user.jpg" alt="user" width="80" height="80">
+					<span>(<i>20:18</i>)这个选手的技能放的不错......</span>
+				</p>
+				(1221455)
+			</li>
+
+		</ul>
+	</div>
+	<div id="div5">
+		<b id="total">总计<span>3000</span>人参与&nbsp;&nbsp;&nbsp;&nbsp;评论总数<span>222222</span>条</b>
+		<div id="userId" class="align-center">1221455</div>
+		<div class="btn align-center">开始抽奖</div>
+		<h3>中奖历史名单:</h3>
+		<div class="list">
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+			<span>1221455</span>
+		</div>
+	</div>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			function generateNumbers(){
+				var numbers = '';
+				for(var i=0;i<7;i++){
+					numbers += Math.floor(Math.random(0,1)*10);
+				}
+				return numbers;
+			}
+			var isTurning = false,
+				interval = null;
+			$('.btn').click(function(){
+				if(!isTurning){
+					isTurning = true;
+					interval = setInterval(function(){
+						$('#userId').html(generateNumbers());
+					}.bind(this),100);
+					$(this).html('暂停');
+				}else{
+					clearInterval(interval);
+					isTurning = false;
+					$(this).html('开始抽奖');
+				}
+			})
+		});
+	</script>
+</body>
+</html>

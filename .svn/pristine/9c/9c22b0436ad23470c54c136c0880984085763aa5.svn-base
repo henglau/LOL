@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html1</title>
+	<link rel="stylesheet" href="css/lol.css">
+</head>
+<body>
+	<div id="div1" class="align-center">
+		<img src="images/code.jpg" alt="code" width="350" height="350">
+		<p>扫码参与抽奖</p>
+	</div>
+	<div id="div2">
+		<div class="turntable-container">
+			<div class="turntable">
+			</div>
+			<div class="begin"><div></div></div>
+		</div>
+		<p class="align-center"><b>当前信息:</b><span id="currentInfo"></span></p>
+		<p class="align-center">排队辛苦了，请扫码左上方的二维码参与抽奖，好礼正为你打开幸运之门。</p>
+	</div>
+	<div id="div3">
+		<h4 class="align-center">幸运得主名单</h4>
+		<ul>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user" width="55" height="55">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+
+		</ul>
+	</div>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.rotate.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var isTurning = false,
+				angels = [[126,162],[90,126],[54,90],[18,54]],
+				pidList = $('#div3 ul'),
+				pidLiHeight = pidList.children().first().height();
+			function turnTable(angel,func){
+				if(!isTurning){
+					isTurning = true;
+					$(".turntable").rotate({
+						angle:0, 
+						duration: 5000, 
+						animateTo: 7200 + angel,
+						callback:function(){
+							isTurning = false;
+							func ? func() : '';
+						}
+					}); 
+				}
+			}
+			var socketUri ="ws://211.149.187.81:9501"; 
+			getData();
+			function getData() { 
+				websocket = new WebSocket(socketUri); 
+				websocket.onopen = function(evt) { 
+					onOpen(evt) ;
+				}; 
+				websocket.onclose = function(evt) { 
+					onClose(evt) ;
+					getData();
+				}; 
+				websocket.onmessage = function(evt) { 
+					onMessage(evt) ;
+				}; 
+				websocket.onerror = function(evt) { 
+					onError(evt) ;
+					getData();
+				}; 
+			}  
+
+			function onOpen(evt) { 
+				updateMessage("CONNECTED"); 
+				doSend(JSON.stringify({type:'screent_lottery',data:''})); 
+			}  
+
+			function onClose(evt) { 
+				updateMessage("DISCONNECTED"); 
+			}  
+
+			function onMessage(evt) { 
+				var data = $.parseJSON(evt.data).data; 
+				if(data.prize){
+					var pid = parseInt(data.prize.pid),
+						angel = Math.floor(Math.random()*36+angels[pid][0]+1);
+					$('#currentInfo').html('<img src="'+data.user_info.icon+'" alt="user" width="55" height="55" />正在抽奖');
+					turnTable(angel,function(){
+
+						if(pid != 0){
+							$('#currentInfo').html('恭喜'+data.user_info.code+'获得'+data.prize.name+'奖品');
+							$('<li><p><img src="'+data.user_info.icon+'" alt="user" width="55" height="55">恭喜获得'+data.prize.name+'</p><span>('+data.user_info.code+')</span></li>').appendTo(pidList);
+							pidList.animate({scrollTop:pidList[0].scrollHeight},500);
+						}
+					});
+			      //  websocket.close();   //发完消息就关闭链接
+				}
+			}  
+
+			function onError(evt) { 
+			  	updateMessage('ERROR:出错啦'); 
+			}  
+
+			function doSend(message) { 
+			  	updateMessage("SENT: " + message);  
+			  	websocket.send(message); 
+			}  
+
+			function updateMessage(message) { 
+				console.info(message);
+			}
+		});
+	</script>
+</body>
+</html>

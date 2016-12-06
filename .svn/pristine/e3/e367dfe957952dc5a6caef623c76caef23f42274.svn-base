@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html1</title>
+	<link rel="stylesheet" href="css/lol.css">
+</head>
+<body>
+	<div id="div1" class="align-center">
+		<img src="images/code.jpg" alt="code" width="350" height="350">
+		<p>扫码参与抽奖</p>
+	</div>
+	<div id="div2">
+		<div class="turntable-container">
+			<div class="turntable">
+			</div>
+			<div class="begin"><div></div></div>
+		</div>
+		<p class="align-center"><b>当前信息:</b> <img src="images/user.jpg" alt="user"><span class="user"></span>正在抽奖 / 恭喜<span class="user">XXX</span>获得XXX奖品</p>
+		<p class="align-center">排队辛苦了，请扫码左上方的二维码参与抽奖，好礼正为你打开幸运之门。</p>
+	</div>
+	<div id="div3">
+		<h4 class="align-center">幸运得主名单</h4>
+		<ul>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+			<li>
+				<p><img src="images/user.jpg" alt="user">恭喜获得新手礼包</p>
+				<span>(PW1221455)</span>
+			</li>
+
+		</ul>
+	</div>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.rotate.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var isTurning = false;
+			$('.begin').click(function(){
+				if(!isTurning){
+					isTurning = true;
+					$(".turntable").rotate({
+						angle:0, 
+						duration: 5000, 
+						animateTo: 8000+1440,
+						callback:function(){
+							isTurning = false;
+						}
+					}); 
+				}
+			})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+post 地址:
+http://211.149.187.81:9501
+
+所有接口统一标准:
+格式, JSON: 
+收到数据: {"status":"true/false","msg":"","data":""}
+提交数据: {"type":"","data":""}
+
+一 APP转盘抽奖页面:
+
+接口1 点击抽奖时,发送请求
+---------
+点击抽奖时:
+请求地址: http://211.149.187.81:9501
+请求方式: post
+字段名: json
+字段内容json字符串:{
+    "type":"screent_lottery",
+    "data":{
+        "user_info":{
+            "icon":"http://ww.com/ttt.jpg",
+            "code":"PW045412",
+            "time":"20:35"
+        },
+        "prize":""
+    }
+}
+
+返回数据: 
+{
+    "status":"true/false",
+    "msg":"",
+    "data":""  
+}
+
+
+
+接口2 抽奖结束时,发送请求
+---------
+抽奖结束时:
+请求地址: http://211.149.187.81:9501
+请求方式: post
+字段名: json
+字段内容json字符串:{
+    "type":"screent_lottery",
+    "data":{
+        "user_info":{
+            "icon":"http://ww.com/ttt.jpg",
+            "code":"PW045412",
+            "time":"20:35"
+        },
+        "prize":{
+            "pid":"1",  //转盘ID
+            "name":"笔记本电脑"  //奖品名字, name为空时,表示没有中奖
+        } // prize 必有
+    }
+}
+
+返回数据: 
+{
+    "status":"true/false",
+    "msg":"",
+    "data":""  
+}
+
+
+二 评论页面
+
+接口3 用户评论时
+---------
+用户评论时:
+请求地址: http://211.149.187.81:9501
+请求方式: post
+请求数据: 
+字段名: json
+字段内容json字符串:{
+    "type":"screent_comment",
+    "data":{
+        "total":{
+            "people":"250",
+            "comment":"250220",
+        },
+        "comment":{
+            "icon":"http://ww.com/ttt.jpg",
+            "code":"PW045412",
+            "time":"20:35",
+            "content":"伤B.."
+        } //comment可能会为空, 为空时,只推送人数信息
+    }
+}
+
+返回数据: 
+{
+    "status":"true/false",
+    "msg":"",
+    "data":""  
+}

@@ -1,0 +1,368 @@
+﻿<div class="watch" id="share_box_tip" style="display:none">
+    <div class="watch_content" style="height:120px;">
+        <div id="share_tip"></div>
+		<hr class="common_hr"/>
+		<div style="margin-top:10px;" id="share_miao"></div>
+    </div>
+</div>
+<script>var require = { urlArgs: 'v={php echo date('YmdH');}' };</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="{$_W['siteroot']}app/resource/js/require.js"></script>
+<script src="{$_W['siteroot']}app/resource/js/app/config.js"></script>
+<script type="text/javascript">
+	//奖品类型
+	//var type = {$userinfo['prize_type']};
+	var type = 1;
+	//var status = {$userinfo['status']};
+	var status = 0;
+	//var iszhuanfa = {$userinfo['iszhuanfa']};
+	var iszhuanfa = 0;
+	
+	// jssdk config 对象
+	var url = '{$url}';
+	var lingqu = '{$lingqu}';
+	jssdkconfig = {php echo json_encode($_W['account']['jssdkconfig']);} || {};
+	// 是否启用调试
+	jssdkconfig.debug = false;
+	
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideOptionMenu',
+		'showOptionMenu'
+	];
+
+	wx.config(jssdkconfig);
+	require(['jquery', 'util'], function($, util){
+		if(iszhuanfa == 1){
+			$(".choujiang").hide();
+			if(type == 5){
+					$(".qiangzhi").hide();
+					$(".zhuanpan").hide();
+					$(".zhuanpan2").hide();
+					$(".type5").show();
+					$(".type5 .queding").click(function(){
+						$('.type5').fadeOut();
+						$(".ButtonArea").show();
+						$(".choujiang").hide();
+						$(".mask").html($('.type5').html())
+					})
+				}else if(type == 4){
+					$(".qiangzhi").hide();
+					$(".zhuanpan").hide();
+					$(".zhuanpan2").hide();
+					$(".type4").show();
+					$(".type4 .queding").click(function(){
+						$('.type4').fadeOut();
+						$(".ButtonArea").show();
+						$(".choujiang").hide();
+						$(".mask").html($('.type4').html())
+					})
+				}else if(type == 3){
+					if(status == 1){
+						$(".type3").fadeOut();
+						$(".ButtonArea").show();
+						$(".choujiang").hide();
+						$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶1L装一瓶</p><span class="huanling">已换领</span></li></ul>')
+					}else{
+						$(".qiangzhi").hide();
+						$(".zhuanpan").hide();
+						$(".zhuanpan2").hide();
+						$(".type3").show();
+						$(".yes").click(function(){
+							$.ajax({
+									type: "get",
+									url: lingqu+"&status=1",
+									//data: "{}",
+									//contentType: "application/json; charset=utf-8",
+									//dataType: "json",
+									success: function (data) {
+										status = 1
+										//alert("奖品已兑换，请在我的奖品中查看")
+									}
+								})
+							$(".type3").fadeOut();
+							$(".ButtonArea").show();
+							$(".choujiang").hide();
+							$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶1L装一瓶</p><span class="huanling">已换领</span></li></ul>')
+						})
+						$(".no").click(function(){
+							$('.type3').fadeOut();
+							$(".ButtonArea").show();
+							$(".choujiang").hide();
+							$(".jiangpin").click(function(){
+								$('.type3').show();
+								$(".mask").hide();
+							})
+							$(".yes").click(function(){
+								$.ajax({
+									type: "get",
+									url: lingqu+"&status=1",
+									//data: "{}",
+									//contentType: "application/json; charset=utf-8",
+									//dataType: "json",
+									success: function (data) {
+										status = 1
+										//alert("奖品已兑换，请在我的奖品中查看")
+									}
+								})
+								$(".jiangpin").click(function(){
+									$(".mask").show();
+									$(".type3").remove()
+									$(".jiangpin-detail").children().remove();
+									$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶1L装一瓶</p><span class="huanling">已换领</span></li></ul>')
+								})
+							})
+						})
+					}
+				}else if(type == 2){
+					if(status == 1){
+						$(".type2").fadeOut();
+						$(".ButtonArea").show();
+						$(".choujiang").hide();
+						//$(".mask").show()
+						$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶500mL装一瓶</p><span class="huanling">已换领</span></li></ul>')
+					}else{
+						$(".qiangzhi").hide();
+						$(".zhuanpan").hide();
+						$(".zhuanpan2").hide();
+						$(".type2").show();
+						$(".yes").click(function(){
+							$.ajax({
+									type: "get",
+									url: lingqu+"&status=1",
+									//data: "{}",
+									//contentType: "application/json; charset=utf-8",
+									//dataType: "json",
+									success: function (data) {
+										status = 1
+										//alert("奖品已兑换，请在我的奖品中查看")
+									}
+								})
+							$(".type2").fadeOut();
+							$(".ButtonArea").show();
+							$(".choujiang").hide();
+							$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶500mL装一瓶</p><span class="huanling">已换领</span></li></ul>')
+						})
+						$(".no").click(function(){
+							$('.type2').fadeOut();
+							$(".ButtonArea").show();
+							$(".choujiang").hide();
+							$(".jiangpin").click(function(){
+								$('.type2').show();
+								$(".mask").hide();
+							})
+							$(".yes").click(function(){
+								$.ajax({
+									type: "get",
+									url: lingqu+"&status=1",
+									//data: "{}",
+									//contentType: "application/json; charset=utf-8",
+									//dataType: "json",
+									success: function (data) {
+										status = 1
+										//alert("奖品已兑换，请在我的奖品中查看")
+									}
+								})
+								$(".jiangpin").click(function(){
+									$(".mask").show();
+									$(".type2").remove()
+									$(".jiangpin-detail").children().remove();
+									$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶500ml装一瓶</p><span class="huanling">已换领</span></li></ul>')
+								})
+							})
+						})
+					}
+				}else if(type == 1){
+					$(".choujiang").show();
+				}
+		}
+		
+		var sharedata = {
+			  title: '统一冰红茶2016IGL国际游戏联盟夏季总决赛开始了，奖品多多，等你来拿！',
+			  desc: '统一冰红茶2016IGL国际游戏联盟夏季总决赛开始了，奖品多多，等你来拿！',
+			  link: 'http://addon.qanfun.com/app/index.php?i=10&c=entry&do=index&m=YXLM',
+			  imgUrl: 'http://oelw8c79u.bkt.clouddn.com/share.jpg',
+			  };
+		var share_data = {
+			title: sharedata.title,
+			desc: sharedata.desc,
+			link: sharedata.link,
+			imgUrl: sharedata.imgUrl,
+			success:function(){
+				$.ajax({
+					type: "get",
+					url: url+"&iszhuanfa=1",
+					//data: "{}",
+					//contentType: "application/json; charset=utf-8",
+					//dataType: "json",
+					success: function (data) {
+						// Play with returned data in JSON format
+						//localStorage.setItem("Number",mobileNO);
+						//window.location = "http://kf.gzbaishitong.com/games/jay/zhuanfa.jpg"
+						$(".zhuanfa").remove();
+						if(type == 5){
+							$(".qiangzhi").hide();
+							$(".zhuanpan").hide();
+							$(".zhuanpan2").hide();
+							$(".type5").show();
+							$(".type5 .queding").click(function(){
+								$('.type5').fadeOut();
+								$(".ButtonArea").show();
+								$(".choujiang").hide();
+								$(".mask").html($('.type5').html())
+							})
+						}else if(type == 4){
+							$(".qiangzhi").hide();
+							$(".zhuanpan").hide();
+							$(".zhuanpan2").hide();
+							$(".type4").show();
+							$(".type4 .queding").click(function(){
+								$('.type4').fadeOut();
+								$(".ButtonArea").show();
+								$(".choujiang").hide();
+								$(".mask").html($('.type4').html())
+							})
+						}else if(type == 3){
+							if(status == 0){
+								$(".qiangzhi").hide();
+								$(".zhuanpan").hide();
+								$(".zhuanpan2").hide();
+								$(".type3").show();
+								$(".yes").click(function(){
+									$.ajax({
+										type: "get",
+										url: lingqu+"&status=1",
+										//data: "{}",
+										//contentType: "application/json; charset=utf-8",
+										//dataType: "json",
+										success: function (data) {
+											status = 1
+											//alert(data)
+										}
+									})
+									$(".type3").fadeOut();
+									$(".ButtonArea").show();
+									$(".choujiang").hide();
+									$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶1L装一瓶</p><span class="huanling">已换领</span></li></ul>')
+								})
+								$(".no").click(function(){
+									$('.type3').fadeOut();
+									$(".ButtonArea").show();
+									$(".choujiang").hide();
+									$(".jiangpin").click(function(){
+										$('.type3').show();
+										$(".mask").hide();
+									})
+									$(".yes").click(function(){
+										$.ajax({
+											type: "get",
+											url: lingqu+"&status=1",
+											//data: "{}",
+											//contentType: "application/json; charset=utf-8",
+											//dataType: "json",
+											success: function (data) {
+												status = 1
+												//alert(data)
+											}
+										})
+										$(".jiangpin").click(function(){
+											$(".mask").show();
+											$(".type3").remove()
+											$(".jiangpin-detail").children().remove();
+											$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶1L装一瓶</p><span class="huanling">已换领</span></li></ul>')
+										})
+									})
+								})
+							}
+						}else if(type == 2){
+							if(status == 0){
+								$(".qiangzhi").hide();
+								$(".zhuanpan").hide();
+								$(".zhuanpan2").hide();
+								$(".type2").show();
+								$(".yes").click(function(){
+									$.ajax({
+										type: "get",
+										url: lingqu+"&status=1",
+										//data: "{}",
+										//contentType: "application/json; charset=utf-8",
+										//dataType: "json",
+										success: function (data) {
+											status = 1
+											//alert(status)
+											//alert(data)
+										}
+									})
+									$(".type2").fadeOut();
+									$(".ButtonArea").show();
+									$(".choujiang").hide();
+									$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶500mL装一瓶</p><span class="huanling">已换领</span></li></ul>')
+								})
+								$(".no").click(function(){
+									$('.type2').fadeOut();
+									$(".ButtonArea").show();
+									$(".choujiang").hide();
+									$(".jiangpin").click(function(){
+										$('.type2').show();
+										$(".mask").hide();
+									})
+									$(".yes").click(function(){
+										$.ajax({
+											type: "get",
+											url: lingqu+"&status=1",
+											//data: "{}",
+											//contentType: "application/json; charset=utf-8",
+											//dataType: "json",
+											success: function (data) {
+												status = 1
+												//alert(data)
+											}
+										})
+										$(".jiangpin").click(function(){
+											$(".mask").show();
+											$(".type2").remove()
+											$(".jiangpin-detail").children().remove();
+											$(".jiangpin-detail").append('<p style="text-align:center;font-size:1rem;width:100%">我的奖品</br></br></p><ul><li><p id="ml">统一冰红茶500ml装一瓶</p><span class="huanling">已换领</span></li></ul>')
+										})
+									})
+								})
+
+								}
+						}else if(type == 1){
+							$(".qiangzhi").hide();
+							$(".zhuanpan").hide();
+							$(".zhuanpan2").hide();
+							$(".type1").show();
+							$(".type1 .queding").click(function(){
+								$('.type1').fadeOut();
+								$(".ButtonArea").show();
+								$(".choujiang").hide();
+								$(".mask").html($('.type1').html())
+							})
+						}
+						//$("body").append("<div style='position:absolute;width:100%;height:100%;background:rgba(0,0,0,.5)'><img src='../addons/bst_paima/template/mobile/erweima.png' style='width:70%;position:absolute;top:20%;left:15%'></div>")
+					},
+					error: function (msg) {
+						alert(msg);
+					}
+				});
+			}
+		};
+		
+
+		wx.ready(function () {
+			wx.hideOptionMenu();
+			wx.showOptionMenu();
+			wx.onMenuShareAppMessage(share_data);
+			wx.onMenuShareTimeline(share_data);
+			wx.onMenuShareQQ(share_data);
+			wx.onMenuShareWeibo(share_data);
+			
+		});
+	});
+	
+</script>
